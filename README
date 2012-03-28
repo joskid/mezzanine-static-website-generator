@@ -1,2 +1,20 @@
 
 Project to convert a mezzanine website to a static website that be hooked directly to nginx...
+
+
+Documentation
+
+1. Add 'static_file_generator' to INSTALLED_APPS in settings.py
+
+2. Give the path of HTML_SITE_ROOT in settings.py where the root of the static
+   site will be stored. Make sure the path is absolute. If the path is left blank
+   the static site will be stored in '_site' directory  in the project folder.
+   
+
+2. Run 'python manage.py generate_static_site'  to generate static site.
+
+
+4. Whenever a page is created or updated a post_save signal is passed to a reciever
+   which creates the new or updated static file for the page.
+   
+
